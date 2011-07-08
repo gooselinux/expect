@@ -1,0 +1,9 @@
+diff -up expect-5.44.1.15/example/unbuffer.orig expect-5.44.1.15/example/unbuffer
+--- expect-5.44.1.15/example/unbuffer.orig	2010-03-08 16:24:38.260378258 +0100
++++ expect-5.44.1.15/example/unbuffer	2010-03-08 16:24:57.525387178 +0100
+@@ -19,4 +19,5 @@ if {[string compare [lindex $argv 0] "-p
+     set timeout -1
+     eval [list spawn -noecho] $argv
+     expect
++    exit [lindex [eval wait] 3]
+ }
